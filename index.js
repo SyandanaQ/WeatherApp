@@ -6,7 +6,7 @@ const error404 = document.querySelector('.not-found');
 
 search.addEventListener('click', () => {
 
-    const APIKey = 'CODE API';
+    const APIKey = '';
     const city = document.querySelector('.search-box input').value;
 
     if (city === '')
@@ -34,6 +34,7 @@ search.addEventListener('click', () => {
             const humidity = document.querySelector('.weather-details .humidity span');
             const wind = document.querySelector('.weather-details .wind span');
 
+            if (json.weather && json.weather.length > 0) {
             switch (json.weather[0].main) {
                 case 'Clear':
                     image.src = 'images/clear.png';
@@ -71,7 +72,7 @@ search.addEventListener('click', () => {
             container.style.height = '590px';
 
 
-        });
+        }});
 
 
 });
